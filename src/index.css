@@ -1,0 +1,133 @@
+html,
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* input::-webkit-outer-spin-button, */
+/* input::-webkit-inner-spin-button { */
+/* display: none; <- Crashes Chrome on hover */
+/* -webkit-appearance: none; */
+/* margin: 0;  */
+/* } */
+
+/* input[type="number"] { */
+/* -moz-appearance: textfield; */
+/* }  */
+
+.responsive-image {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+.responsive-image__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-div {
+  height: 150vh;
+}
+.menu-text-color {
+  color: "black";
+}
+.menu-text-color:hover {
+  color: #e65100;
+}
+.responsive {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+.responsive__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputStyle {
+  width: 2rem !important;
+  height: 2rem;
+  margin: 0 1px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.align-right {
+  margin-left: 500;
+  float: "right";
+}
+.font {
+  color: "black";
+}
+.underline {
+  text-decoration: none;
+}
+
+.margin-elements {
+  margin-top: 10px;
+}
+.margin-edit-delete-buttons {
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.navbar-link {
+  color: black;
+}
+
+.navbar-link:hover {
+  color: #2a75f0;
+}
+
+.deals-of-day {
+  transform: scale(1);
+}
+
+.deals-of-day:hover {
+  transform: scale(1.1);
+}
+
+.link-margin {
+  margin-right: calc(730px);
+}
+
+.carousel .slide img {
+  width: 400px !important;
+  height: 400px !important;
+  object-fit: cover !important;
+}
+
+.card-image {
+  object-fit: cover !important;
+}
+.ant-badge {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+.pointer {
+  cursor: pointer;
+}

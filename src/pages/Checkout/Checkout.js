@@ -141,6 +141,103 @@ const Checkout = () => {
             <>
               <p className="text-danger">
                 Please Add Your Address before Placing Order...
+                <>
+                  <h4> Update your Delivery Address</h4>
+
+                  <div className="row">
+                    <div className="col-md-6">
+                      <input
+                        name="name"
+                        type="text"
+                        onChange={(e) => handleAddressChange(e)}
+                        className="form-control"
+                        placeholder="Name"
+                      />
+                      <br />
+                      <input
+                        name="pincode"
+                        type="number"
+                        onChange={(e) => handleAddressChange(e)}
+                        className="form-control"
+                        placeholder="Pincode"
+                      />
+                    </div>
+
+                    <div className="col-md-6">
+                      <input
+                        name="mobile"
+                        type="number"
+                        onChange={(e) => handleAddressChange(e)}
+                        className="form-control"
+                        placeholder="10 Digit Mobile Number"
+                      />
+                      <br />
+                      <input
+                        name="area"
+                        type="text"
+                        onChange={(e) => handleAddressChange(e)}
+                        className="form-control"
+                        placeholder="Locality"
+                      />
+                    </div>
+                  </div>
+                  <br />
+                  <div className="row">
+                    <div className="col-md-12">
+                      <textarea
+                        name="address"
+                        onChange={(e) => handleAddressChange(e)}
+                        className="form-control"
+                        placeholder="Address (Area and Street)"
+                        rows="4"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <br />
+                  <div className="row">
+                    <div className="col-md-6">
+                      <input
+                        name="city"
+                        onChange={(e) => handleAddressChange(e)}
+                        type="text"
+                        className="form-control"
+                        placeholder="City/District/Town"
+                      />
+                      <br />
+                      <input
+                        name="landmark"
+                        onChange={(e) => handleAddressChange(e)}
+                        type="text"
+                        className="form-control"
+                        placeholder="Landmark (Optional)"
+                      />
+                    </div>
+
+                    <div className="col-md-6">
+                      <input
+                        name="state"
+                        type="text"
+                        onChange={(e) => handleAddressChange(e)}
+                        className="form-control"
+                        placeholder="State"
+                      />
+                      <br />
+                      <input
+                        name="altPhn"
+                        onChange={(e) => handleAddressChange(e)}
+                        type="number"
+                        className="form-control"
+                        placeholder="Alternate Phone (Optional)"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    className="btn btn-primary mt-2"
+                    onClick={saveAddressToDb}
+                  >
+                    Save
+                  </button>
+                </>
               </p>
             </>
           )}

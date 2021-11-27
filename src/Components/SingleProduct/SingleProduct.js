@@ -18,6 +18,7 @@ import axios from "axios";
 import { url } from "../../config";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
+import outofstock from "../../assets/Images/out-of-stock.png";
 
 const { TabPane } = Tabs;
 
@@ -126,12 +127,26 @@ const SingleProduct = ({ product, onStarClick, star }) => {
 
         <Card
           actions={[
-            <Tooltip title={tooltip}>
-              <a onClick={handleAddToCart}>
-                <ShoppingCartOutlined className="text-danger" />
-                <br /> Add to Cart
-              </a>
-            </Tooltip>,
+            <>
+              {product.quantity < 1 ? (
+                <Tooltip title="Out of Stock">
+                  <a disabled="disabled">
+                    <img
+                      style={{ height: "14px", width: "15px" }}
+                      src={outofstock}
+                    />
+                    <br /> Out of Stock
+                  </a>
+                </Tooltip>
+              ) : (
+                <Tooltip title={tooltip}>
+                  <a onClick={handleAddToCart}>
+                    <ShoppingCartOutlined className="text-danger" />
+                    <br /> Add to Cart
+                  </a>
+                </Tooltip>
+              )}
+            </>,
             <a onClick={handleAddToWishlist}>
               <HeartOutlined className="text-danger" /> <br /> Add to Wishlist
             </a>,

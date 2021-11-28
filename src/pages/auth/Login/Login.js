@@ -104,12 +104,9 @@ const Login = () => {
           <div className="col-md-6 offset-md-3">
             <h4 className="col-md-6">User Login</h4>
             <Row>
-              <Card
-                className="responsive-image"
-                title="Login"
-                style={{ width: 700 }}
-              >
+              <Card title="Login" style={{ width: 700 }}>
                 <Form
+                  className="responsive-image"
                   onSubmit={handleSubmit}
                   layout="vertical"
                   name="basic"

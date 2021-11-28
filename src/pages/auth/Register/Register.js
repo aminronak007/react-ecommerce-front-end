@@ -44,12 +44,9 @@ const Register = () => {
           <div className="col-md-6 offset-md-3">
             <h4 className="col-md-6">User Registraton</h4>
             <Row>
-              <Card
-                className="responsive-image"
-                title="Registration Form"
-                style={{ width: 700 }}
-              >
+              <Card title="Registration Form" style={{ width: 700 }}>
                 <Form
+                  className="responsive-image"
                   onSubmit={handleSubmit}
                   layout="vertical"
                   name="basic"

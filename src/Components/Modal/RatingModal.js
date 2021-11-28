@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button } from "antd";
+import { Modal } from "antd";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import { StarOutlined } from "@ant-design/icons";

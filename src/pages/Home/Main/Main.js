@@ -1,6 +1,5 @@
 import React from "react";
 import DealsOfDay from "../DealsOfDay/DealsOfDay";
-import Header from "../../../Components/Header/Header";
 import Banner from "../Carousel/Banner";
 import Products from "../Products/Products";
 import CategoryList from "../../../Components/Category/CategoryList";

@@ -8,7 +8,7 @@ import { Menu, Slider, Checkbox, Radio } from "antd";
 import { DownSquareOutlined, StarOutlined } from "@ant-design/icons";
 import Star from "../../Components/Stars/Star";
 
-const { SubMenu, ItemGroup } = Menu;
+const { SubMenu } = Menu;
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -23,9 +23,9 @@ const Shop = () => {
   const [brands, setBrands] = useState([
     "Apple",
     "Samsung",
-    "Microsoft",
-    "Lenovo",
-    "ASUS",
+    "Oppo",
+    "Oneplus",
+    "Xiaomi",
   ]);
   const [brand, setBrand] = useState("");
   const [colors, setColors] = useState([
@@ -135,7 +135,7 @@ const Shop = () => {
     setBrand("");
     setColor("");
     setShipping("");
-    // console.log(e.target.value);
+    console.log(e.target.value);
     let inTheState = [...categoryIds];
     let justChecked = e.target.value;
     let foundInTheState = inTheState.indexOf(justChecked); // index or -1
@@ -146,6 +146,7 @@ const Shop = () => {
     } else {
       // if found pull out one item from index
       inTheState.splice(foundInTheState, 1);
+      loadAllProducts();
     }
 
     setCategoryIds(inTheState);

@@ -24,7 +24,7 @@ export const listProducts = async (sort, order, page) =>
   });
 
 export const getProductsCount = async () =>
-  await axios.post("${url}/api/products/total");
+  await axios.post(`${url}/api/products/total`);
 
 export const productStar = async (productId, star, userEmail) =>
   await axios.put(`${url}/api/product/star/${productId}`, {

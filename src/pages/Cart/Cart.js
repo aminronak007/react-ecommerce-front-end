@@ -110,7 +110,7 @@ const Cart = ({ history }) => {
                   className="btn btn-sm btn-primary mt-2"
                   disabled={!cart.length}
                 >
-                  Proceed To Checkout
+                  Pay Online
                 </button>
                 <br />
                 <button

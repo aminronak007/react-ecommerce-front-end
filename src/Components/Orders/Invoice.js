@@ -80,7 +80,7 @@ const Invoice = ({ order }) => (
         </TableHeader>
       </Table>
 
-      <Table data={order.products}>
+      <Table data={order.products.length > 0 ? order.products : null}>
         <TableBody>
           <DataTableCell getContent={(x) => x.product.productName} />
           <DataTableCell getContent={(x) => `Rs. ${x.product.price}`} />
@@ -91,10 +91,15 @@ const Invoice = ({ order }) => (
       </Table>
 
       <Text style={styles.text}>
-        {/* <Text>
-        Date: {"               "}
-        {new Date(order.paymentIntent.created * 1000).toLocaleString()}
-      </Text> */}
+        {order.paymentIntent ? (
+          <Text>
+            Date: {"               "}
+            {new Date(order.paymentIntent.created * 1000).toLocaleString()}
+          </Text>
+        ) : (
+          ""
+        )}
+
         {"\n"}
         <Text>
           Order Id: {"         "}
@@ -106,10 +111,15 @@ const Invoice = ({ order }) => (
           {order.orderStatus}
         </Text>
         {"\n"}
-        {/* <Text>
-        Total Paid: {"       "}
-        {order.paymentIntent.amount}
-      </Text> */}
+
+        {order.paymentIntent ? (
+          <Text>
+            Total Paid: {"       "}
+            {order.paymentIntent.amount}
+          </Text>
+        ) : (
+          ""
+        )}
       </Text>
 
       <Text style={styles.footer}> ~ Thank you for shopping with us ~ </Text>

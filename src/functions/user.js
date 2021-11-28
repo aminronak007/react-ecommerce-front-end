@@ -26,7 +26,7 @@ export const createOrder = async (user, stripeResponse) =>
   });
 
 export const getUserOrders = async (user) =>
-  axios.post(`${url}/api/orders`, {
+  axios.post(`${url}/api/user/orders`, {
     user,
   });
 

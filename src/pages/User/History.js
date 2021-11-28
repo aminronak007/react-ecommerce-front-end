@@ -4,8 +4,9 @@ import { CheckCircleOutlined, CloseCircleOutlined } from "@ant-design/icons";
 import Cookies from "js-cookie";
 import axios from "axios";
 import ShowPaymentInfo from "../../Components/ProductCards/ShowPaymentInfo";
-import { StyleSheet, PDFDownloadLink } from "@react-pdf/renderer";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import Invoice from "../../Components/Orders/Invoice";
+import { url } from "../../config";
 
 const History = () => {
   const token = Cookies.get("accessToken");
@@ -19,7 +20,7 @@ const History = () => {
 
   const loadUser = () => {
     axios
-      .get("http://localhost:3000", {
+      .get(`${url}`, {
         headers: {
           authorization,
         },
@@ -36,7 +37,6 @@ const History = () => {
 
   const loadUserOrders = () => {
     getUserOrders(user).then((res) => {
-      //   console.log(res);
       setOrders(res.data.userOrders);
     });
   };
@@ -56,22 +56,29 @@ const History = () => {
       <tbody>
         {order.products && order.products.length > 0
           ? order.products.map((p, i) => (
-              <tr key={i}>
-                <td>
-                  <b>{p.product.productName}</b>
-                </td>
-                <td> {p.product.price}</td>
-                <td> {p.product.brand}</td>
-                <td> {p.color}</td>
-                <td> {p.count}</td>
-                <td>
-                  {p.product.shipping === "Yes" ? (
-                    <CheckCircleOutlined style={{ color: "green" }} />
-                  ) : (
-                    <CloseCircleOutlined style={{ color: "red" }} />
-                  )}
-                </td>
-              </tr>
+              <>
+                <tr key={i}>
+                  <td>
+                    <b>{p.product ? p.product.productName : ""}</b>
+                  </td>
+                  <td> {p.product ? p.product.price : ""}</td>
+                  <td> {p.product ? p.product.brand : ""}</td>
+                  <td> {p.product ? p.color : ""}</td>
+                  <td> {p.product ? p.count : ""}</td>
+
+                  <td>
+                    {p.product ? (
+                      p.product.shipping === "Yes" ? (
+                        <CheckCircleOutlined style={{ color: "green" }} />
+                      ) : (
+                        <CloseCircleOutlined style={{ color: "red" }} />
+                      )
+                    ) : (
+                      ""
+                    )}
+                  </td>
+                </tr>
+              </>
             ))
           : null}
       </tbody>

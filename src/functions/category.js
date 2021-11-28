@@ -14,7 +14,7 @@ export const updateCategory = async (slug, category) =>
   await axios.put(`${url}/api/category/${slug}`, category);
 
 export const createCategory = async (categoryName) =>
-  await axios.post("${url}/api/category", categoryName);
+  await axios.post(`${url}/api/category`, categoryName);
 
 export const getCategorySubCategories = async (_id) =>
   await axios.get(`${url}/api/category/subCategories/${_id}`);

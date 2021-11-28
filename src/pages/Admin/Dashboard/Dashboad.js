@@ -39,7 +39,7 @@ const Dashboard = () => {
     <>
       {currentUser.id || token ? (
         <>
-          <div style={{ display: "flex" }} className="sidebar-div">
+          <div style={{ display: "flex" }}>
             <Sidebar />
 
             <div className="container-fluid p-4">
